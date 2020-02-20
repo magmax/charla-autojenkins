@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Autojenkins</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/serif.css" id="theme"/>
+    <style>
+      body{
+      }
+      .textdiv {
+         background-color: rgba(255, 255, 255, 0.95);
+      }
+      .kbd {
+      font-family: monospace;
+      background-color: #000;
+      color: #0f0;
+      padding-left: 10px;
+      padding-right: 10px;
+      }
+      .myslide {
+        background-color: #fff;
+      }
+      .reveal h1 {
+        font-size: 3em;
+      }
+      .reveal h2 {
+        font-size: 2em;
+      }
+      .reveal section img {
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+            <h1>Autojenkins</h1>
+            <h2>Closing Jenkins to development</h2>
+        </section>
+
+        <section 
+                data-background-image="picaRFnegro.png" 
+                data-background-size="30%"
+                data-background-opacity="0.1">
+            <h2>About me</h2>
+            <ul>
+                <li>Miguel Ángel García</li>
+                <li><a href="https://magmax.org">https://magmax.org</a><br/></li>
+                <li><a href="https://twitter.com/magmax9">@magmax9</a></li>
+                <li>DevOps Lead at R.Franco Technologies.</li>
+                <li>Developer for more than 20 years.</li>
+                <li>Trying to be DevOps for more than 5 years.</li>
+            </ul>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+            <img src="./imsorry1.jpg"/>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <img src="./imsorry2.jpg"/>
+        </section>
+
+        <section>
+            <h2>Why this speech?</h2>
+            <p>
+              <q class="fragment">
+                Build projects around motivated individuals.
+                Give them the environment and support they need,
+                and trust them to get the job done. 
+              </q>
+            </p>
+            <p>
+              <q class="fragment">
+                The best architectures, requirements, and designs
+                emerge from self-organizing teams. 
+              </q>
+            </p>
+            <p align="right">
+                <a 
+                    href="https://agilemanifesto.org/principles.html" 
+                    class="fragment">
+                    Principles behind the Agile Manifesto
+                </a>
+            </p>
+        </section>
+
+        <section data-background="problems.jpg">
+        </section>
+
+        <section data-background="organization.jpg">
+            <div class="textdiv">
+                <h2>Code organization</h2>
+                <ul>
+                    <li class="fragment">A repository for each project</li>
+                    <li class="fragment">Several projects in the same repository</li>
+                    <li class="fragment">Several repositories per project (libs)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="organization.jpg">
+            <div class="textdiv">
+                <h2>Code organization</h2>
+                <h3>Problems to deal with</h3>
+                <ul>
+                    <li class="fragment">Dependencies between projects</li>
+                    <li class="fragment">Dependencies between repositories</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="stairs.jpg">
+            <div class="textdiv">
+                <h2>Application Architecture</h2>
+                <ul>
+                    <li class="fragment">Monolith</li>
+                    <li class="fragment">Microservices</li>
+                    <li class="fragment">Micromonoliths</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="stairs.jpg">
+            <div class="textdiv">
+                <h2>Application Architecture</h2>
+                <h3>Problems to deal with</h3>
+                <ul>
+                    <li class="fragment">Dependencies between services</li>
+                    <li class="fragment">Different programming languages</li>
+                    <li class="fragment">Documentation</li>
+                    <li class="fragment">Different Testing Frameworks</li>
+                    <li class="fragment">Different test types (unit, system, integration, ...)</li>
+                    <li class="fragment">Deployments</li>
+                    <li class="fragment">Build time</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="workflow.png">
+            <div class="textdiv">
+                <h2>Developers workflows</h2>
+                <ul>
+                    <li class="fragment">No repository</li>
+                    <li class="fragment">Feature Branches</li>
+                    <li class="fragment">Release Branches</li>
+                    <li class="fragment">Hotfix Branches</li>
+                    <li class="fragment">Git-flow</li>
+                    <li class="fragment">No Git-flow</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="workflow.png">
+            <div class="textdiv">
+                <h2>Developers workflows</h2>
+                <h3>Problems to deal with</h3>
+                <ul>
+                    <li class="fragment">Release numbers (SemVer)</li>
+                    <li class="fragment">Hotfixes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="problems.jpg">
+            <div class="textdiv">
+                <h2>Problems Summary</h2>
+                <ul>
+                    <li>Dependencies between projects</li>
+                    <li>Dependencies between repositories</li>
+                    <li>Dependencies between services</li>
+                    <li>Different programming languages</li>
+                    <li>Documentation</li>
+                    <li>Different Testing Frameworks</li>
+                    <li>Different test types (unit, system, integration, ...)</li>
+                    <li>Deployments</li>
+                    <li>Build time</li>
+                    <li>Release numbers (SemVer)</li>
+                    <li>Hotfixes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="solutions.jpg">
+        </section>
+
+        <section data-background="package.png">
+            <div class="textdiv fragment">
+                <h2>Binary repositories</h2>
+                <ul>
+                    <li class="fragment">Any change must be packaged</li>
+                    <li class="fragment">Our favourite: Docker</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="package.png">
+            <div class="textdiv">
+                <h2>Binary repositories</h2>
+                <h3>Problems it solves</h3>
+                <ul>
+                    <li class="fragment">None by itself</li>
+                    <li class="fragment">Dependencies between projects</li>
+                    <li class="fragment">Docker: Different programming languages</li>
+                    <li class="fragment">Kubernetes: Dependencies between services</li>
+                    <li class="fragment">Consistency: MD5, SHA-1, ...</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="package.png">
+            <div class="textdiv">
+                <h2>Binary repositories</h2>
+                <h3>Advice</h3>
+                <ul>
+                    <li class="fragment">Generate always a hash for outputs</li>
+                    <li class="fragment">Generate always a hash for inputs</li>
+                    <li class="fragment">Remember git commits are SHA-1...</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="jenkins.png" data-background-size="40%">
+            <div class="textdiv">
+                <h2>Build script</h2>
+                <ul>
+                    <li class="fragment"><b>MUST</b> be in the own repository</li>
+                    <li class="fragment">Trust developers</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="jenkins.png" data-background-size="40%">
+            <div class="textdiv">
+                <h2>Build script</h2>
+                <h3>Our Jenkins:</h3>
+                <ul>
+                    <li class="fragment">Uses declarative Jenkinsfiles</li>
+                    <li class="fragment">But are stored in libraries</li>
+                    <li class="fragment">Shared between projects</li>
+                    <li class="fragment">Dockerfiles with multiple containers</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="jenkins.png" data-background-size="40%">
+            <div class="textdiv">
+                <h2>Build script</h2>
+                <h3>Example</h3>
+                <pre><code data-trim data-noescape>
+#!/usr/bin/groovy
+library identifier: 'ci-library@master', retriever: modernSCM(
+  [$class: 'GitSCMSource',
+   remote: 'git@the_repository.git',
+   credentialsId: 'secret'])
+   
+
+defaultGradlePipelineV1 (
+  label: 'builder-name',
+  path_to_build: 'services/my_project',
+  job_timeout: '45',
+  config_file: 'jenkinsfile-config.yaml'
+)
+                </code></pre>
+            </div>
+        </section>
+
+        <section data-background="jenkins.png" data-background-size="40%">
+            <div class="textdiv">
+                <h2>Project Structures</h2>
+                <ul>
+                    <li class="fragment">Automatic: Jenkinsfiles mark projects</li>
+                    <li class="fragment">Manual: Managed by developers</li>
+                    <li class="fragment">Dynamic creation of Jobs.</li>
+                    <li class="fragment">Parallel!</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="jenkins.png" data-background-size="40%">
+            <div class="textdiv">
+                <h2>Advices</h2>
+                <ul>
+                    <li class="fragment">Use job timeouts. Always.</li>
+                    <li class="fragment">Beware long methods in Jenkinsfiles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="docker.jpg">
+            <div class="textdiv">
+                <h2>Deployments</h2>
+                <ul>
+                    <li class="fragment">Docker everywhere!</li>
+                    <li class="fragment">Helm</li>
+                    <li class="fragment">FluxCD</li>
+                    <li class="fragment">Grafana (Prometheus, Loki, ...)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="summary.jpg">
+            <div class="textdiv fragment">
+                <h2>Summary</h2>
+                <ul>
+                    <li class="fragment">Empower developers!</li>
+                    <li class="fragment">Simplify processes (i.e. Jenkinsfiles)</li>
+                    <li class="fragment">Leave them to control the builds</li>
+                    <li class="fragment">Give them control over deployments</li>
+                    <li class="fragment">Allow them to monitor it.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-background="questions.jpg">
+            <div class="textdiv">
+                <h2>Questions?</h2>
+            </div>
+        </section>
+
+        <section data-background="thankyou.jpg">
+        </section>
+
+        <section 
+                data-background-image="picaRFnegro.png" 
+                data-background-size="30%"
+                data-background-opacity="0.1">
+            <h2>About me</h2>
+            <ul>
+                <li>Miguel Ángel García</li>
+                <li><a href="https://magmax.org">https://magmax.org</a><br/></li>
+                <li><a href="https://twitter.com/magmax9">@magmax9</a></li>
+                <li><a href="https://magmax.org/charla-autojenkins">https://magmax.org/charla-autojenkins</a></li>
+            </ul>
+        </section>
+      </div>
+    </div>
+	    
+	    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+    <script type="text/javascript">
+      Reveal.initialize({
+        history: true,
+        progress: true,
+        dependencies: [
+            { src: 'plugin/highlight/highlight.js', async: true },
+        ],
+      });
+    </script>
+
+  </body>
+</html>
+
+<!-- NOTAS
+- Branches: gestión de distintas ramas
+- git-flow, flujo para releases y para hotfixes.
+-->
