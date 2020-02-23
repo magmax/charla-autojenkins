@@ -32,6 +32,14 @@
         border: 0;
       }
     </style>
+    <script>                                                                     
+        var link = document.createElement( 'link' );                             
+        link.rel = 'stylesheet';                                                 
+        link.type = 'text/css';                                                  
+        link.href = window.location.search.match( /print-pdf/gi ) ?  'pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );          
+    </script>                                                                    
+
   </head>
 
   <body>
@@ -346,9 +354,11 @@ defaultGradlePipelineV1 (
       Reveal.initialize({
         history: true,
         progress: true,
+        pdfSeparateFragments: false,
         dependencies: [
             { src: 'plugin/highlight/highlight.js', async: true },
         ],
+        showSlideNumber: 'print',
       });
     </script>
 
